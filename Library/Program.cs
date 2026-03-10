@@ -18,7 +18,7 @@ namespace Library
             try
             {
                 DotEnv.Load(options: new DotEnvOptions(
-                    envFilePaths: new[] { "../../../../.env" }
+                    envFilePaths: new[] { "../.env" }
                 ));
                 string host = Environment.GetEnvironmentVariable("HOST");
                 int port = int.Parse(Environment.GetEnvironmentVariable("PORT"));
@@ -34,7 +34,7 @@ namespace Library
             }
             catch(Exception ex) 
             { 
-                MessageBox.Show($"������ �������: {ex.Message}");
+                MessageBox.Show($"Exception: {ex.Message}");
             }
         }
 

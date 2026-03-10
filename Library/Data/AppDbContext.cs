@@ -13,9 +13,6 @@ namespace Library.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            DotEnv.Load(options: new DotEnvOptions(
-                envFilePaths: new[] { "../../../../.env" }
-            ));
             optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("DB_CONNECTION"));
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
